@@ -6,6 +6,43 @@
     </head>
 
     <body>
-        <p>Hello</p>
+        <div id="page">
+            <br><br>
+            <img id="profile_pic" src="images/kewpie.jpg" alt="Profile Photo" />
+            <div id="info">
+                <br><br>
+                <p id="small_p">Username</p>
+                <h1 id="username">kewpie_mayo</h1>
+                <p id="small_p">Short Discription</p>
+                <p id="short_desc"> Hello! My name is Kewpie and I love baking and trying new recepies! My favorite ingredient is mayonnaise and my favorite food is takoyaki!</p>
+                <br><br><br>
+            </div>
+    
+            <div id="side_menu">
+                <br><br><br>
+                <ul style="list-style-type:none;">
+                    <li>
+                        <a id = "small_link" href ="edit_profile.html"> <i class="fa fa-edit"></i> Edit profile</a>
+                    </li>
+                    <li> 
+                        <a onclick="return deleteact();" id = "small_link" href ="index.html"></i>Delete Profile </a>
+                    </li>
+                    <li> 
+                        <a onclick="return logout();" id = "small_link" href ="index.html"> Log Out </a>
+                    </li>
+                </ul>
+            </div>
+            <br><br>
+            <hr>
+            <br>
+            <div class="like_div">
+                <h3 id= "likes"><i id="heart" class="fa fa-heart"></i> Liked Recipes </h3>
+                <div id="chicken">
+                    <a href="carbonara.html"><img id="liked_img" src="images/carbonara.jpg" /></a>
+                    <a id="small_link" href="carbonara.html"><p>Carbonara <br> by: mark_axie</p></a>
+                </div>
+            </div>
+        </div>
+
     </body>
 </html>
