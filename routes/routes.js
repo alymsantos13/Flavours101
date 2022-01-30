@@ -5,6 +5,7 @@ const app = express();
 
 // get functions
 app.get(`/`, UserController.getIndex);
-app.get('/:id', UserController.getProfile);
+app.get('/profile', UserController.getProfile);
+app.post('/signin', UserController.postLogin);
 
 module.exports = app;
