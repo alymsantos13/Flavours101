@@ -6,7 +6,7 @@ $(document).ready(function () {
      *
      */
 
-  $('#login').click(function (e) {
+    $('#login').click(function (e) {
     e.preventDefault();
     var username = $('#username');
     var password = $('#password');
