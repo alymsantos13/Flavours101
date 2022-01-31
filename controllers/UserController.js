@@ -42,7 +42,11 @@ const UserController = {
     },
 
     getEditProfile: (req, res) => {
-        var password
+        res.render('edit-profile', {});
+    },
+
+    getUpdateProfile: (req,res) => {
+        
     }
 }
 
