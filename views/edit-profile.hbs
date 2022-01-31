@@ -7,7 +7,7 @@
     
     <body>
         <div id="page">
-            <img id="profile_pic" src="images/kewpie.jpg" alt="Profile Photo" />
+            <img id="profile_pic" src="images/{{avatar}}" alt="Profile Photo" />
             <div id="info">
                 <br><br><br>
                 <h1 id="username">{{username}}</h1>
@@ -18,7 +18,7 @@
                 <h1 id="change_password"> Enter old password: <input type="password" id="old_pass"></h2>
                 <h1 id="change_password"> Enter new password: <input type="password" id="new_pass1"> </h2>
                 <h1 id="change_password"> Retype new password: <input type="password" id="new_pass2"></h2>
-                <button id="center_button" onclick="changePassword(this);">Change Password</button>
+                <button id="submit-edit" onclick="changePassword(this);">Change Password</button>
             </div>
             <div id="side_menu">
                 <button id="changepic_btn" onclick="changePhoto(this);">Change Photo</button>

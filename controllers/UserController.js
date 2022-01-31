@@ -13,7 +13,8 @@ const UserController = {
         res.render('profile', {
             username: sess.User.username,
             password: sess.User.password,
-            description: sess.User.description
+            description: sess.User.description,
+            avatar: sess.User.avatar
         });
     },
 
@@ -38,6 +39,10 @@ const UserController = {
 
             }
         });
+    },
+
+    getEditProfile: (req, res) => {
+        
     }
 }
 
