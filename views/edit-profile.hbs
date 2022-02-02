@@ -8,9 +8,9 @@
     
     <body>
         <div id="page">
-            <img id="profile_pic" src="images/{{avatar}}" alt="Profile Photo" />
+            <img id="profile_pic" src="avatars/{{avatar}}" alt="Profile Photo" />
             <div id="info">
-            <form method="POST" action="./update-profile">    
+            <form method="POST" action="./update-profile" enctype="multipart/form-data">    
                     <br><br><br>
                     <h1 id="username">Username: <input type="text" id="username-input" value="{{username}}" name="username"> </h1>
                     <p id="short_desc">Description: <input type="text" id="description-input" value="{{description}}" name="description"> </p>

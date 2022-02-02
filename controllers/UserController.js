@@ -1,5 +1,6 @@
 const db = require('../models/db.js')
 const User = require('../models/UserModel.js') 
+const path = require('path')
 
 const UserController = {
     getIndex: (req, res) => {
@@ -52,31 +53,38 @@ const UserController = {
         });
     },
 
-    getUpdateProfile: (req,res) => {
+    getUpdateProfile: async (req,res) => {
         //FIX MAY MALI DITOOOOOOOOOOOOOOOOOO
         let sess = req.session;
-        const { username, description, avatar } = req.body
+        const { username, description } = req.body
         
 
         sess.User.username = username;
         sess.User.description = description;
-        sess.User.avatar = avatar;
-        sess.save();
         
+        //upload avatar
+        const { avatar: image } = req.files;
+        // Change file name to username-avatar.jpg
+        const fileName = username + '-avatar.' + image.name.split('.')[1]
+        const uploadPath = path.resolve('./public/avatars', fileName);
+
+        await image.mv(uploadPath);
+
         const user = {
             username: username,
             description: description,
-            avatar: avatar
+            avatar: fileName,
         }
 
-        console.log("Here");
+        sess.User.avatar = fileName;
 
-        User.findOneAndUpdate({_id: sess.User._id}, user, function(err, succ) {
-            if(err)
-                console.log(err);
-            else
-                console.log('PROFILE EDITED');
-        })
+        try {
+            await User.updateOne({_id: sess.User._id}, user);
+            console.log('PROFILE EDITED');
+            res.redirect ('/profile'); 
+        } catch (err) {
+            console.log(err)
+        }
     }
 }
 
