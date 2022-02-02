@@ -105,8 +105,9 @@ body {
     color:rgb(71, 70, 70);
 }
 
-#center_button:hover {
+#center_button:hover, #submit-edit:hover {
     background-color: seashell;
+    cursor: pointer;
 }
 
 

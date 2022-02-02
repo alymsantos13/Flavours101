@@ -8,5 +8,6 @@ app.get(`/`, UserController.getIndex);
 app.get('/profile', UserController.getProfile);
 app.post('/signin', UserController.postLogin);
 app.get('/edit-profile', UserController.getEditProfile);
+app.get('/update-profile', UserController.getUpdateProfile);
 
 module.exports = app;

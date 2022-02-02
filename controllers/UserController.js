@@ -42,11 +42,39 @@ const UserController = {
     },
 
     getEditProfile: (req, res) => {
-        res.render('edit-profile', {});
+        let sess = req.session;
+
+        res.render('edit-profile', {
+            username: sess.User.username,
+            password: sess.User.password,
+            description: sess.User.description,
+            avatar: sess.User.avatar
+        });
     },
 
     getUpdateProfile: (req,res) => {
-        
+        //FIX MAY MALI DITOOOOOOOOOOOOOOOOOO
+        let sess = req.session;
+        username = req.query.username;
+        description = req.query.description;
+        //avatar = req.query.avatar;
+
+        sess.User.username = username;
+        sess.User.description = description;
+        sess.save();
+        s
+        user = new User ({
+            username: username,
+            description: description,
+            avatar: sess.User.avatar
+        })
+
+        User.findOneAndUpdate({_id: sess.User._id}, {user: User}, function(err, succ) {
+            if(err)
+                console.log(err);
+            else
+                console.log('PROFILE EDITED');
+        })
     }
 }
 

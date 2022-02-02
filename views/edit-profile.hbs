@@ -2,6 +2,7 @@
     <head>
         <link rel="stylesheet" type="text/css" media="all" href="css/edit_profile.css">
         <script src="https://kit.fontawesome.com/38d688374b.js" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="/javascript/profile.js"></script> 
         <title>Edit Profile</title>
     </head>
     
@@ -9,25 +10,28 @@
         <div id="page">
             <img id="profile_pic" src="images/{{avatar}}" alt="Profile Photo" />
             <div id="info">
-                <br><br><br>
-                <h1 id="username">Username: <input type="text" id="username-input"> </h1>
-                <p id="short_desc">Description: <input type="text" id="description-input"> </p>
-                <button id="submit-edit" onclick="editUser(this);">Edit</button>
-                
-                <h1 id="change_header"> Change Password </h2>
-                <h1 id="change_password"> Enter old password: <input type="password" id="old_pass"></h2>
-                <h1 id="change_password"> Enter new password: <input type="password" id="new_pass1"> </h2>
-                <h1 id="change_password"> Retype new password: <input type="password" id="new_pass2"></h2>
-                <button id="center_button" onclick="changePassword(this);">Change Password</button>
-            </div>
-            <div id="side_menu">
-                <button id="changepic_btn" onclick="changePhoto(this);">Change Photo</button>
-                <ul id="list">
-                    <li>
-                        <a id = "small_link" href ="profile.html"> Back to Profile</a>
-                    </li>
-                </ul>
-            </div>
+            <form method="GET">    
+                    <br><br><br>
+                    <h1 id="username">Username: <input type="text" id="username-input" value="{{username}}"> </h1>
+                    <p id="short_desc">Description: <input type="text" id="description-input" value="{{description}}"> </p>
+                    <button type="submit" id="submit-edit">Edit</button>
+            </form>                    
+                    <h1 id="change_header"> Change Password </h2>
+                    <h1 id="change_password"> Enter old password: <input type="password" id="old_pass"></h2>
+                    <h1 id="change_password"> Enter new password: <input type="password" id="new_pass1"> </h2>
+                    <h1 id="change_password"> Retype new password: <input type="password" id="new_pass2"></h2>
+                    <button id="center_button" onclick="changePassword(this);">Change Password</button>
+                </div>
+                <div id="side_menu">
+                    <button id="changepic_btn" onclick="changePhoto(this);">Change Photo</button>
+                    <ul id="list">
+                        <li>
+                            <a id = "small_link" href ="profile.html"> Back to Profile</a>
+                        </li>
+                    </ul>
+                </div>
+            </form>
+            
         </div>
     </body>
 </html>

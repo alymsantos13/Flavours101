@@ -5,8 +5,8 @@ $(document).ready(function () {
         let username = $('#username-input');
         let description = $('#description-input');
 
-        $.get('/edit-profile', {username: username.value, description = description.value}, function(data, status){});
-        window.location= '/edit-profile';
+        $.get('/update-profile', {username: username.val(), description = description.val()}, function(data, status){});
+        window.location= '/profile';
     });
 
     $('#small_link').click(function () {
