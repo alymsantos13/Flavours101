@@ -2,7 +2,7 @@
     <head>
         <link rel="stylesheet" type="text/css" media="all" href="css/edit_profile.css">
         <script src="https://kit.fontawesome.com/38d688374b.js" crossorigin="anonymous"></script>
-        <script type="text/javascript" src="/javascript/profile.js"></script> 
+        <script type="text/javascript" src="/javascript/editprofile.js"></script> 
         <title>Edit Profile</title>
     </head>
     
@@ -10,10 +10,11 @@
         <div id="page">
             <img id="profile_pic" src="images/{{avatar}}" alt="Profile Photo" />
             <div id="info">
-            <form method="GET">    
+            <form method="POST" action="./update-profile">    
                     <br><br><br>
-                    <h1 id="username">Username: <input type="text" id="username-input" value="{{username}}"> </h1>
-                    <p id="short_desc">Description: <input type="text" id="description-input" value="{{description}}"> </p>
+                    <h1 id="username">Username: <input type="text" id="username-input" value="{{username}}" name="username"> </h1>
+                    <p id="short_desc">Description: <input type="text" id="description-input" value="{{description}}" name="description"> </p>
+                    <p id="short_desc">Avatar: <input type="file" id="avatar-input" name="avatar"> </p>
                     <button type="submit" id="submit-edit">Edit</button>
             </form>                    
                     <h1 id="change_header"> Change Password </h2>

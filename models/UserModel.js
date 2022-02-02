@@ -13,7 +13,7 @@ var mongoose = require('mongoose');
  * @property profile: Profile Schema containing the profile of the user.
  */
 var UserSchema = new mongoose.Schema({
-    id: {type: String},
+    // id: {type: String},
     username: {
         type: String, 
         required: true
@@ -23,6 +23,9 @@ var UserSchema = new mongoose.Schema({
         required: true
     },
     description: {
+        type: String
+    },
+    avatar: {
         type: String
     }
 });
