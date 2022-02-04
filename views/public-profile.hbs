@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <title>Profile</title>
+        <link rel="icon" type="image/png" href="/images/favicon.ico"/>
+        <link rel="stylesheet" type="text/css" href="/css/profile_style.css">   
+        <script type="text/javascript" src="/javascript/editprofile.js"></script>  
+    </head>
+
+    <body>
+        <div id="page">
+            <br><br>
+            <img id="profile_pic" src="avatars/{{avatar}}" alt="Profile Photo" />
+            <div id="info">
+                <br><br>
+                <p id="small_p">Username</p>
+                <h1 id="username">{{username}}</h1>
+                <p id="small_p">Short Description</p>
+                <p id="short_desc"> {{description}}</p>
+                <br><br><br>
+            </div>
+    
+            <br><br>
+            <hr>
+            <br>
+            <div class="like_div">
+                <h3 id= "likes"><i id="heart" class="fa fa-heart"></i> Liked Recipes </h3>
+                {{!-- <div id="chicken">
+                    <a href="carbonara.html"><img id="liked_img" src="images/carbonara.jpg" /></a>
+                    <a id="small_link" href="carbonara.html"><p>Carbonara <br> by: mark_axie</p></a>
+                </div> --}}
+            </div>
+        </div>
+
+    </body>
+</html>
+{{!-- Ayusin yung Edit profile, logout, delete --}}
