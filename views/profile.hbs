@@ -3,7 +3,7 @@
         <title>Profile</title>
         <link rel="icon" type="image/png" href="/images/favicon.ico"/>
         <link rel="stylesheet" type="text/css" href="/css/profile_style.css">   
-        {{!-- <script type="text/javascript" src="/javascript/profile.js"></script>   --}}
+        <script type="text/javascript" src="/javascript/editprofile.js"></script>  
     </head>
 
     <body>
@@ -26,7 +26,11 @@
                         <a id = "small_link" href ="/edit-profile"> <i class="fa fa-edit"></i> Edit Profile</a>
                     </li>
                     <li> 
-                        <a onclick="return deleteact();" id = "small_link" href ="index.html"></i>Delete Profile </a>
+                        {{!-- <a id = "delete-acct" href ="/"></i>Delete Profile </a> --}}
+                        <form method="POST" action="/delete">
+                            <button id="delete-acct" type="submit" >Delete Profile</button>
+                        </form>
+                        
                     </li>
                     <li> 
                         <a onclick="return logout();" id = "small_link" href ="index.html"> Log Out </a>

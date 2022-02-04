@@ -14,5 +14,9 @@ $(document).ready(function () {
         window.location = '/edit-profile';
     });
 
+    $('#delete-acct').click(function (){
+        window.location = '/';
+    })
+
     
 })

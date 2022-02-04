@@ -1,6 +1,9 @@
 const db = require('../models/db.js')
 const User = require('../models/UserModel.js') 
-const path = require('path')
+const path = require('path');
+const async = require('hbs/lib/async');
+const { findByIdAndDelete } = require('../models/UserModel.js');
+const { Mongoose } = require('mongoose');
 
 const UserController = {
     getIndex: (req, res) => {
@@ -54,7 +57,6 @@ const UserController = {
     },
 
     getUpdateProfile: async (req,res) => {
-        //FIX MAY MALI DITOOOOOOOOOOOOOOOOOO
         let sess = req.session;
         const { username, description } = req.body
         
@@ -85,6 +87,16 @@ const UserController = {
         } catch (err) {
             console.log(err)
         }
+    },
+
+    getDeleteProfile: (req, res) => {
+        let sess = req.session;
+        console.log('hi');
+        User.deleteOne({_id: sess.User._id}, function(){
+            
+        })
+        res.redirect('/');
+        console.log('DELETED');
     }
 }
 
