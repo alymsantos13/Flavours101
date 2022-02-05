@@ -97,7 +97,25 @@ const UserController = {
         })
         res.redirect('/');
         console.log('DELETED');
-    }
+    },
+
+ 
+    getUpdatePassword: async (req,res) => {
+        let sess = req.session;
+
+        try {
+            const { _id } = req.params;
+            const salt = await bcrypt.genSalt(10);
+
+            //if yung password is equal sa tinype niya na old password
+            //then, if equal din ung new password sa niretype na new password
+            //then, password: newpasword
+
+        } catch (err) {
+            console.log(err)
+        }
+    },
+
 }
 
 

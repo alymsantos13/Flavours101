@@ -10,5 +10,6 @@ app.post('/signin', UserController.postLogin);
 app.get('/edit-profile', UserController.getEditProfile);
 app.post('/update-profile', UserController.getUpdateProfile);
 app.post('/delete', UserController.getDeleteProfile);
+app.post('/update-password', UserController.getUpdatePassword);
 
 module.exports = app;
